@@ -511,6 +511,7 @@ class APIRouter(routing.Router):
             warning_response_model_skip_defaults_deprecated()  # pragma: nocover
 
         def decorator(func: Callable) -> Callable:
+            path = func.__name__ # Name of function = route. Assumes global unique func names
             self.add_api_route(
                 path,
                 func,

@@ -408,8 +408,8 @@ class FastAPI(Starlette):
 
     def post(
         self,
-        path: str,
         *,
+        path: str = None,
         response_model: Type[Any] = None,
         status_code: int = 200,
         tags: List[str] = None,
